@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>HELP.YO - Login</title>
+<style>
+/* ========== ESTILOS GLOBAIS ========== */
+/* Configura a página inteira como um container flexível centralizado */
+body {
+  margin: 0; /* Remove margens padrão */
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #4a90e2, #6fc3ff); /* Gradiente azul diagonal */
+  height: 100vh; /* Ocupa 100% da altura da janela */
+  display: flex; /* Ativa layout flexível */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+/* ========== CONTAINER DE LOGIN ========== */
+/* Caixa branca central onde ficam os campos de login */
+.login-container {
+  background: white; /* Fundo branco para contraste */
+  padding: 40px; /* Espaçamento interno generoso */
+  border-radius: 15px; /* Cantos arredondados */
+  width: 320px; /* Largura fixa do formulário */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Sombra pronunciada para destacar */
+  text-align: center; /* Centraliza todo o conteúdo interno */
+}
+
+/* ========== LOGO E TÍTULO ========== */
+/* Logo "HELP.YO" no topo do formulário */
+.logo {
+  font-size: 28px; /* Tamanho grande para destaque */
+  font-weight: bold; /* Texto em negrito */
+  margin-bottom: 10px; /* Espaço até o subtítulo */
+}
+
+/* Destaca a parte ".YO" da logo em azul */
+.logo span {
+  color: #4a90e2;
+}
+
+/* Texto descritivo abaixo da logo */
+.subtitle {
+  font-size: 13px; /* Fonte pequena */
+  color: #777; /* Cor cinza suave */
+  margin-bottom: 20px; /* Espaço até os campos de entrada */
+}
+
+/* ========== CAMPOS DE ENTRADA (INPUT) ========== */
+/* Estilização dos campos de usuário e senha */
+input {
+  width: 100%; /* Ocupa toda a largura disponível */
+  padding: 12px; /* Espaçamento interno para conforto */
+  margin: 10px 0; /* Espaçamento vertical entre os campos */
+  border-radius: 8px; /* Cantos arredondados */
+  border: 1px solid #ccc; /* Borda cinza clara */
+}
+
+/* ========== BOTÃO DE ENTRAR ========== */
+/* Botão principal para submeter o login */
+button {
+  width: 100%; /* Ocupa toda a largura */
+  padding: 12px; /* Espaçamento interno */
+  background: #4a90e2; /* Fundo azul (cor da marca) */
+  color: white; /* Texto branco */
+  border: none; /* Remove borda padrão */
+  border-radius: 8px; /* Cantos arredondados */
+  cursor: pointer; /* Muda cursor para "mãozinha" */
+}
+
+/* Efeito hover: escurece o botão ao passar o mouse */
+button:hover {
+  background: #357abd; /* Azul mais escuro */
+}
+
+/* ========== LINKS AUXILIARES ========== */
+/* Container dos links de cadastro e recuperação de senha */
+.links {
+  margin-top: 10px; /* Espaço acima dos links */
+}
+
+/* Estilização dos links "Cadastrar" e "Esqueci a senha" */
+.links a {
+  display: block; /* Cada link em uma linha separada */
+  font-size: 12px; /* Fonte pequena */
+  color: #4a90e2; /* Azul da marca */
+  text-decoration: none; /* Remove sublinhado padrão */
+}
+</style>
+
+<!-- ========== SCRIPT DE VALIDAÇÃO ========== -->
+<script>
+/**
+ * Função que valida o login do usuário
+ * Verifica se as credenciais estão corretas e redireciona para a home
+ */
+function login() {
+  // Captura o valor digitado no campo de usuário
+  let user = document.getElementById("user").value;
+  
+  // Captura o valor digitado no campo de senha
+  let pass = document.getElementById("pass").value;
+  
+  // Verifica se as credenciais correspondem aos valores fixos
+  // (usuário: "html" / senha: "123")
+  if (user === "html" && pass === "123") {
+    // Se correto, redireciona para a página principal
+    window.location.href = "home.html";
+  } else {
+    // Se incorreto, exibe mensagem de erro
+    alert("Usuário ou senha incorretos");
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- ========== FORMULÁRIO DE LOGIN ========== -->
+<!-- Container principal com todos os elementos de login -->
+<div class="login-container">
+  
+  <!-- Logo com emoji de foguete -->
+  <div class="logo">HELP<span>.YO</span> 🚀</div>
+  
+  <!-- Texto descritivo da plataforma -->
+  <div class="subtitle">Organize seus estudos de forma inteligente</div>
+  
+  <!-- Campo de entrada para o nome de usuário -->
+  <input type="text" id="user" placeholder="Usuário">
+  
+  <!-- Campo de entrada para a senha (texto oculto) -->
+  <input type="password" id="pass" placeholder="Senha">
+  
+  <!-- Botão que executa a função login() ao ser clicado -->
+  <button onclick="login()">Entrar</button>
+  
+  <!-- Links auxiliares para cadastro e recuperação de senha -->
+  <div class="links">
+    <a href="#">Cadastrar</a>
+    <a href="#">Esqueci a senha</a>
+  </div>
+  
+</div>
+
+</body>
+</html>
