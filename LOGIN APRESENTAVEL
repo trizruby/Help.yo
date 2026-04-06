@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>HELP.YO - Login</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #4a90e2, #6fc3ff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.logo span {
+  color: #4a90e2;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #357abd;
+}
+
+.links {
+  margin-top: 10px;
+}
+
+.links a {
+  display: block;
+  font-size: 12px;
+  color: #4a90e2;
+  text-decoration: none;
+}
+</style>
+
+<script>
+function login() {
+  let user = document.getElementById("user").value;
+  let pass = document.getElementById("pass").value;
+
+  if (user === "html" && pass === "123") {
+    window.location.href = "home.html";
+  } else {
+    alert("Usuário ou senha incorretos");
+  }
+}
+</script>
+</head>
+
+<body>
+
+<div class="login-container">
+  <div class="logo">HELP<span>.YO</span> 🚀</div>
+  <div class="subtitle">Organize seus estudos de forma inteligente</div>
+
+  <input type="text" id="user" placeholder="Usuário">
+  <input type="password" id="pass" placeholder="Senha">
+
+  <button onclick="login()">Entrar</button>
+
+  <div class="links">
+    <a href="#">Cadastrar</a>
+    <a href="#">Esqueci a senha</a>
+  </div>
+</div>
+
+</body>
+</html>
