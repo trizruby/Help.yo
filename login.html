@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>HELP.YO</title>
+<style>
+/* ========== ESTILOS GLOBAIS ========== */
+/* Remove margens padrão e define fonte e cor de fundo para toda a página */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9fbfd; /* Fundo azul claro suave */
+}
+
+/* ========== CABEÇALHO (HEADER) ========== */
+/* Barra superior do site com logo e botões de navegação */
+header {
+  display: flex; /* Alinha os elementos em linha (horizontal) */
+  justify-content: space-between; /* Empurra logo para esquerda e botões para direita */
+  align-items: center; /* Centraliza verticalmente */
+  padding: 20px 40px; /* Espaçamento interno */
+  background: white; /* Fundo branco */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Sombra sutil embaixo do header */
+}
+
+/* Estilo da logo "HELP.YO" */
+.logo {
+  font-size: 22px;
+  font-weight: bold; /* Texto em negrito */
+}
+
+/* Destaca a parte ".YO" da logo em azul */
+.logo span {
+  color: #4a90e2;
+}
+
+/* Botões do topo (Usuário e Configurações) */
+.top-buttons button {
+  margin-left: 10px; /* Espaçamento entre os botões */
+  padding: 8px 14px; /* Espaçamento interno dos botões */
+  border-radius: 8px; /* Cantos arredondados */
+  border: none; /* Remove borda padrão */
+  background: #eee; /* Fundo cinza claro */
+  cursor: pointer; /* Muda cursor para "mãozinha" ao passar o mouse */
+}
+
+/* Efeito hover (ao passar o mouse) nos botões do topo */
+.top-buttons button:hover {
+  background: #ddd; /* Escurece levemente o fundo */
+}
+
+/* ========== CONTEÚDO PRINCIPAL (MAIN) ========== */
+/* Área central da página onde ficam o título e os cards */
+main {
+  padding: 40px; /* Espaçamento interno */
+  text-align: center; /* Centraliza todo o conteúdo */
+}
+
+/* Título principal "Como a HELP.YO pode te ajudar hoje?" */
+h1 {
+  margin-bottom: 40px; /* Espaço entre o título e os cards */
+}
+
+/* ========== GRADE DE CARDS ========== */
+/* Organiza os 8 cards em uma grade de 4 colunas */
+.grid {
+  display: grid; /* Ativa o layout em grade */
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas de tamanho igual */
+  gap: 25px; /* Espaçamento entre os cards */
+  max-width: 800px; /* Largura máxima da grade */
+  margin: 0 auto; /* Centraliza a grade na página */
+}
+
+/* ========== CARDS DE FUNCIONALIDADES ========== */
+/* Cada card representa uma funcionalidade (Flashcards, Tarefas, etc.) */
+.card {
+  background: white; /* Fundo branco */
+  padding: 25px; /* Espaçamento interno */
+  border-radius: 15px; /* Cantos bem arredondados */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Sombra suave ao redor do card */
+  cursor: pointer; /* Indica que o card é clicável */
+  transition: 0.2s; /* Suaviza animações de hover */
+  position: relative; /* Necessário para posicionar o tooltip */
+}
+
+/* Efeito ao passar o mouse sobre o card: sobe levemente */
+.card:hover {
+  transform: translateY(-5px); /* Move o card 5px para cima */
+}
+
+/* Ícone emoji dentro de cada card */
+.icon {
+  font-size: 35px; /* Tamanho grande para o emoji */
+  margin-bottom: 10px; /* Espaço entre o ícone e o texto */
+}
+
+/* ========== TOOLTIP (DICA FLUTUANTE) ========== */
+/* Texto que aparece embaixo do card ao passar o mouse */
+.tooltip {
+  position: absolute; /* Posiciona em relação ao card */
+  bottom: -35px; /* Aparece 35px abaixo do card */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajuste fino da centralização */
+  
+  background: #333; /* Fundo escuro */
+  color: white; /* Texto branco */
+  padding: 6px 10px; /* Espaçamento interno */
+  border-radius: 5px; /* Cantos arredondados */
+  font-size: 12px; /* Fonte pequena */
+  opacity: 0; /* Começa invisível */
+  pointer-events: none; /* Não interfere com cliques */
+  transition: 0.2s; /* Suaviza aparição/desaparecimento */
+  white-space: nowrap; /* Impede quebra de linha no texto */
+}
+
+/* Mostra o tooltip quando o mouse está sobre o card */
+.card:hover .tooltip {
+  opacity: 1; /* Torna visível */
+}
+</style>
+</head>
+<body>
+
+<!-- ========== CABEÇALHO ========== -->
+<!-- Barra superior com logo e botões de navegação -->
+<header>
+  <!-- Logo do site com emoji de foguete -->
+  <div class="logo">HELP<span>.YO</span> 🚀</div>
+  
+  <!-- Botões de acesso rápido no canto superior direito -->
+  <div class="top-buttons">
+    <button>Usuário</button>
+    <button>Configurações</button>
+  </div>
+</header>
+
+<!-- ========== CONTEÚDO PRINCIPAL ========== -->
+<main>
+  <!-- Título de boas-vindas -->
+  <h1>Como a HELP.YO pode te ajudar hoje?</h1>
+  
+  <!-- Grade com 8 cards de funcionalidades -->
+  <div class="grid">
+    
+    <!-- Card 1: Flashcards - Sistema de revisão por cartões -->
+    <div class="card">
+      <div class="icon">📚</div>
+      Flashcards
+      <span class="tooltip">Revise conteúdos rapidamente</span>
+    </div>
+    
+    <!-- Card 2: Tarefas - Gerenciador de atividades -->
+    <div class="card">
+      <div class="icon">📝</div>
+      Tarefas
+      <span class="tooltip">Organize suas atividades</span>
+    </div>
+    
+    <!-- Card 3: Calendário - Planejamento de estudos -->
+    <div class="card">
+      <div class="icon">📅</div>
+      Calendário
+      <span class="tooltip">Planeje seus estudos</span>
+    </div>
+    
+    <!-- Card 4: Calculadora - Ferramenta para cálculos -->
+    <div class="card">
+      <div class="icon">🧮</div>
+      Calculadora
+      <span class="tooltip">Resolva exercícios</span>
+    </div>
+    
+    <!-- Card 5: Resumos - Criação de anotações -->
+    <div class="card">
+      <div class="icon">📖</div>
+      Resumos
+      <span class="tooltip">Crie anotações rápidas</span>
+    </div>
+    
+    <!-- Card 6: Pomodoro - Técnica de gestão de tempo (25min foco + 5min pausa) -->
+    <div class="card">
+      <div class="icon">⏱️</div>
+      Pomodoro
+      <span class="tooltip">Gerencie seu tempo de foco</span>
+    </div>
+    
+    <!-- Card 7: Notas - Anotações rápidas -->
+    <div class="card">
+      <div class="icon">📌</div>
+      Notas
+      <span class="tooltip">Ideias rápidas no dia a dia</span>
+    </div>
+    
+    <!-- Card 8: Metas - Acompanhamento de objetivos -->
+    <div class="card">
+      <div class="icon">🎯</div>
+      Metas
+      <span class="tooltip">Acompanhe seu progresso</span>
+    </div>
+    
+  </div>
+</main>
+
+</body>
+</html>
