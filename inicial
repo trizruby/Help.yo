@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HELP.YO - Organize seus estudos</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f9fbfd;
+  color: #333;
+}
+
+header {
+  background: white;
+  padding: 20px 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.logo span {
+  color: #4a90e2;
+}
+
+.botoes-nav {
+  display: flex;
+  gap: 15px;
+}
+
+.botao {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.botao-borda {
+  background: transparent;
+  border: 2px solid #4a90e2;
+  color: #4a90e2;
+}
+
+.botao-borda:hover {
+  background: #4a90e2;
+  color: white;
+}
+
+.botao-azul {
+  background: #4a90e2;
+  color: white;
+}
+
+.botao-azul:hover {
+  background: #357abd;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+.hero {
+  background: linear-gradient(135deg, #4a90e2, #6fc3ff);
+  color: white;
+  padding: 100px 40px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  animation: aparecerTopo 0.8s;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 40px;
+  opacity: 0.95;
+  animation: aparecerBaixo 0.8s;
+}
+
+.botoes-hero {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: aparecer 1s;
+}
+
+.botao-grande {
+  padding: 15px 35px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.botao-branco {
+  background: white;
+  color: #4a90e2;
+}
+
+.botao-branco:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.funcionalidades {
+  padding: 80px 40px;
+  background: white;
+}
+
+.funcionalidades h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 50px;
+  color: #333;
+}
+
+.grade-funcionalidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-funcionalidade {
+  background: #f9fbfd;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+
+.card-funcionalidade:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-color: #4a90e2;
+}
+
+.icone-funcionalidade {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.card-funcionalidade h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card-funcionalidade p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.beneficios {
+  padding: 80px 40px;
+  background: linear-gradient(135deg, #f9fbfd, #e8f4fd);
+}
+
+.beneficios h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+
+.container-beneficios {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.item-beneficio {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.icone-beneficio {
+  font-size: 40px;
+  flex-shrink: 0;
+}
+
+.conteudo-beneficio h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.conteudo-beneficio p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.cta {
+  background: linear-gradient(135deg, #4a90e2, #6fc3ff);
+  color: white;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+footer {
+  background: #333;
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+.conteudo-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.links-footer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.links-footer a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.links-footer a:hover {
+  color: #4a90e2;
+}
+
+.copyright {
+  margin-top: 20px;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+@keyframes aparecerTopo {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aparecerBaixo {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .funcionalidades h2,
+  .beneficios h2,
+  .cta h2 {
+    font-size: 28px;
+  }
+
+  header {
+    padding: 15px 20px;
+  }
+
+  .botoes-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">HELP<span>.YO</span> 🚀</div>
+
+  <div class="botoes-nav">
+    <a href="login.html" class="botao botao-borda">Entrar</a>
+    <a href="login.html" class="botao botao-azul">Começar</a>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Organize seus estudos de forma inteligente</h1>
+
+  <p>
+    A plataforma completa para gerenciar flashcards,
+    tarefas, calendário e muito mais!
+  </p>
+
+  <div class="botoes-hero">
+    <a href="login.html" class="botao botao-grande botao-branco">
+      Começar Agora
+    </a>
+
+    <a href="#funcionalidades" class="botao botao-grande botao-borda">
+      Conhecer Recursos
+    </a>
+  </div>
+</section>
+
+<section class="funcionalidades" id="funcionalidades">
+  <h2>Tudo que você precisa em um só lugar</h2>
+
+  <div class="grade-funcionalidades">
+
+    <div class="card-funcionalidade">
+      <div class="icone-funcionalidade">📚</div>
+      <h3>Flashcards</h3>
+      <p>Crie e revise flashcards personalizados.</p>
+    </div>
+
+    <div class="card-funcionalidade">
+      <div class="icone-funcionalidade">📝</div>
+      <h3>Tarefas</h3>
+      <p>Organize todas as suas atividades.</p>
+    </div>
+
+    <div class="card-funcionalidade">
+      <div class="icone-funcionalidade">📅</div>
+      <h3>Calendário</h3>
+      <p>Planeje seus estudos facilmente.</p>
+    </div>
+
+    <div class="card-funcionalidade">
+      <div class="icone-funcionalidade">⏱️</div>
+      <h3>Pomodoro</h3>
+      <p>Gerencie seu tempo de foco.</p>
+    </div>
+
+    <div class="card-funcionalidade">
+      <div class="icone-funcionalidade">🧮</div>
+      <h3>Calculadora</h3>
+      <p>Resolva exercícios rapidamente.</p>
+    </div>
+
+    <div class="card-funcionalidade">
+      <div class="icone-funcionalidade">📖</div>
+      <h3>Resumos</h3>
+      <p>Crie anotações organizadas.</p>
+    </div>
+
+    <div class="card-funcionalidade">
+      <div class="icone-funcionalidade">📌</div>
+      <h3>Notas</h3>
+      <p>Salve ideias importantes.</p>
+    </div>
+
+    <div class="card-funcionalidade">
+      <div class="icone-funcionalidade">🎯</div>
+      <h3>Metas</h3>
+      <p>Acompanhe sua evolução.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="beneficios">
+  <h2>Por que escolher HELP.YO?</h2>
+
+  <div class="container-beneficios">
+
+    <div class="item-beneficio">
+      <div class="icone-beneficio">✨</div>
+
+      <div class="conteudo-beneficio">
+        <h3>Interface Intuitiva</h3>
+        <p>Design simples e fácil de usar.</p>
+      </div>
+    </div>
+
+    <div class="item-beneficio">
+      <div class="icone-beneficio">🚀</div>
+
+      <div class="conteudo-beneficio">
+        <h3>Produtividade</h3>
+        <p>Ferramentas integradas para estudar melhor.</p>
+      </div>
+    </div>
+
+    <div class="item-beneficio">
+      <div class="icone-beneficio">🔒</div>
+
+      <div class="conteudo-beneficio">
+        <h3>Segurança</h3>
+        <p>Seus dados protegidos com segurança.</p>
+      </div>
+    </div>
+
+    <div class="item-beneficio">
+      <div class="icone-beneficio">📱</div>
+
+      <div class="conteudo-beneficio">
+        <h3>Acesso Fácil</h3>
+        <p>Use em qualquer dispositivo.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Pronto para transformar seus estudos?</h2>
+
+  <p>
+    Organize melhor seu tempo e aumente sua produtividade.
+  </p>
+
+  <a href="login.html" class="botao botao-grande botao-branco">
+    Criar Conta
+  </a>
+</section>
+
+<footer>
+  <div class="conteudo-footer">
+
+    <div class="links-footer">
+      <a href="#">Sobre</a>
+      <a href="#">Recursos</a>
+      <a href="#">Blog</a>
+      <a href="#">Suporte</a>
+      <a href="#">Contato</a>
+    </div>
+
+    <div class="copyright">
+      © 2026 HELP.YO - Todos os direitos reservados 🚀
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
